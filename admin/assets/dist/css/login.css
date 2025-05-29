@@ -1,0 +1,99 @@
+/* Full-screen background */
+.login-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Overlay effect for better visibility */
+.login-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+/* Centered form styling */
+.login-section .card {
+    background: transparent;
+    border: none;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Card header (title) */
+.login-section .card-header h5 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Input fields */
+.login-section .form-group label {
+    color: #ffffff;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    text-align: left;
+}
+
+.login-section .form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    outline: none;
+    box-shadow: none;
+}
+
+.login-section .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Input focus effect */
+.login-section .form-control:focus {
+    border-bottom: 1px solid #007bff;
+    outline: none;
+}
+
+/* Login button */
+.login-section .btn-dark {
+    background: #2B2D41;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.login-section .btn-dark:hover {
+    background:  #D80027;
+}
+
+/* Forgot password link */
+.login-section .text-dark {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.login-section .text-dark:hover {
+    color: white;
+    text-decoration: underline;
+}

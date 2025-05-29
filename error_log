@@ -1,0 +1,39 @@
+[19-Mar-2025 10:37:23 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[19-Mar-2025 11:11:10 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[19-Mar-2025 18:05:15 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[20-Mar-2025 03:20:41 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[20-Mar-2025 08:08:36 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[20-Mar-2025 10:35:40 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[20-Mar-2025 10:45:55 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[20-Mar-2025 12:55:47 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[20-Mar-2025 12:55:49 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[20-Mar-2025 12:55:51 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[20-Mar-2025 14:35:56 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[20-Mar-2025 18:58:51 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/addmorecreation/public_html/config/dbcon.php:9
+Stack trace:
+#0 /home/addmorecreation/public_html/config/dbcon.php(9): mysqli_connect('localhost', 'addmorecreation...', 'Yo%dzRs_0%&7', 'addmorecreation...')
+#1 /home/addmorecreation/public_html/includes/header.php(3): include('/home/addmorecr...')
+#2 /home/addmorecreation/public_html/index.php(2): include('/home/addmorecr...')
+#3 {main}
+  thrown in /home/addmorecreation/public_html/config/dbcon.php on line 9
+[20-Mar-2025 18:58:52 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/addmorecreation/public_html/config/dbcon.php:9
+Stack trace:
+#0 /home/addmorecreation/public_html/config/dbcon.php(9): mysqli_connect('localhost', 'addmorecreation...', 'Yo%dzRs_0%&7', 'addmorecreation...')
+#1 /home/addmorecreation/public_html/includes/header.php(3): include('/home/addmorecr...')
+#2 /home/addmorecreation/public_html/index.php(2): include('/home/addmorecr...')
+#3 {main}
+  thrown in /home/addmorecreation/public_html/config/dbcon.php on line 9
+[20-Mar-2025 18:58:54 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/addmorecreation/public_html/config/dbcon.php:9
+Stack trace:
+#0 /home/addmorecreation/public_html/config/dbcon.php(9): mysqli_connect('localhost', 'addmorecreation...', 'Yo%dzRs_0%&7', 'addmorecreation...')
+#1 /home/addmorecreation/public_html/includes/header.php(3): include('/home/addmorecr...')
+#2 /home/addmorecreation/public_html/index.php(2): include('/home/addmorecr...')
+#3 {main}
+  thrown in /home/addmorecreation/public_html/config/dbcon.php on line 9
+[20-Mar-2025 19:23:25 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[20-Mar-2025 20:04:24 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[21-Mar-2025 01:13:08 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[21-Mar-2025 16:13:20 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[21-Mar-2025 16:13:22 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[22-Mar-2025 05:29:58 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298
+[22-Mar-2025 06:10:23 UTC] PHP Warning:  Undefined array key "subject" in /home/addmorecreation/public_html/index.php on line 298

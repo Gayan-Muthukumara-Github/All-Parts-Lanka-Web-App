@@ -1,0 +1,21 @@
+/* Product Description List */
+.product-description {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.product-description li {
+    padding: 5px 0;
+    font-weight: 500;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.product-description li i {
+    color: green;
+    margin-right: 8px;
+    font-size: 14px;
+}
