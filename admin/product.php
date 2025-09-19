@@ -141,7 +141,8 @@ if (mysqli_num_rows($query_run) > 0) {
               </h4>
             </div>
             <div class="card-body">
-            <table class="table table-bordered">
+            <input type="text" id="searchProducts" class="form-control mb-3" placeholder="Type product name to filter...">
+            <table class="table table-bordered" id="productsTable">
                 <thead>
                     <tr>
                         <th>Product ID</th>
@@ -248,6 +249,18 @@ if (mysqli_num_rows($query_run) > 0) {
       $('#DeletModal').modal('show');
 
     });
+
+    // simple client-side search across all cells
+    function attachTableFilter(inputSelector, tableSelector) {
+      $(inputSelector).on('keyup', function () {
+        const term = $(this).val().toLowerCase();
+        $(tableSelector + ' tbody tr').each(function () {
+          const rowText = $(this).text().toLowerCase();
+          $(this).toggle(rowText.indexOf(term) !== -1);
+        });
+      });
+    }
+    attachTableFilter('#searchProducts', '#productsTable');
   });
 </script>
 

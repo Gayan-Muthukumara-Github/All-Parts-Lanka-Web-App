@@ -77,7 +77,8 @@ include('includes/sidebar.php');
                             </h4>
                         </div>
                         <div class="card-body">
-                            <table class="table table-bordered">
+                            <input type="text" id="searchBrands" class="form-control mb-3" placeholder="Type brand name to filter...">
+                            <table class="table table-bordered" id="brandsTable">
                                 <thead>
                                     <tr>
                                         <th>Brand ID</th>
@@ -148,6 +149,17 @@ include('includes/sidebar.php');
       $('#DeletModal').modal('show');
 
     });
+
+    // Filter only by Brand Name (2nd column) as user types
+    function filterByBrandName() {
+      const term = $('#searchBrands').val().toLowerCase();
+      $('#brandsTable tbody tr').each(function () {
+        const brandName = $(this).find('td:nth-child(2)').text().toLowerCase();
+        $(this).toggle(brandName.indexOf(term) !== -1);
+      });
+    }
+    $('#searchBrands').on('keyup', filterByBrandName);
+    filterByBrandName();
   });
 </script>
 <?php include('includes/footer.php'); ?>

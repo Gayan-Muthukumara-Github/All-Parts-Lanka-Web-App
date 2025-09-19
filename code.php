@@ -53,7 +53,7 @@ if(isset($_POST['addUser_website'])){
                 else
                 {
                     //Available = Record not found
-                    $user_query = "INSERT INTO users (username,phonenumber,email,password,first_name,last_name,address) VALUES ('$username','$phone','$email','$password','$firstname','$lastname','$address')";
+                    $user_query = "INSERT INTO users (username,phonenumber,email,password,first_name,last_name,address,created_at) VALUES ('$username','$phone','$email','$password','$firstname','$lastname','$address', NOW())";
                     $user_query_run = mysqli_query($con, $user_query);
 
                     if($user_query_run)
@@ -106,7 +106,7 @@ if (isset($_POST['addUser'])) {
             header("Location: index.php");
         } else {
             //Available = Record not found
-            $user_query = "INSERT INTO users (username,phonenumber,email,password) VALUES ('$name','$phone','$email','$password')";
+            $user_query = "INSERT INTO users (username,phonenumber,email,password,created_at) VALUES ('$name','$phone','$email','$password', NOW())";
             $user_query_run = mysqli_query($con, $user_query);
 
             if ($user_query_run) {

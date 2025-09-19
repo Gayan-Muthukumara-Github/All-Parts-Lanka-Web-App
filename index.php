@@ -140,7 +140,7 @@ include('includes/header.php');
 
 
                       <?php
-                      $query = "SELECT * FROM feedback, users WHERE feedback.user_ID = users.user_ID LIMIT 4";
+                      $query = "SELECT * FROM feedback, users WHERE feedback.user_ID = users.user_ID AND IFNULL(feedback.status,1)=1 LIMIT 4";
                       $query_run = mysqli_query($con, $query);
 
                       if (mysqli_num_rows($query_run) > 0) {
@@ -180,7 +180,7 @@ include('includes/header.php');
 
 
                       <?php
-                      $query = "SELECT * FROM feedback, users WHERE feedback.user_ID = users.user_ID LIMIT 4 OFFSET 4";
+                      $query = "SELECT * FROM feedback, users WHERE feedback.user_ID = users.user_ID AND IFNULL(feedback.status,1)=1 LIMIT 4 OFFSET 4";
                       $query_run = mysqli_query($con, $query);
 
                       if (mysqli_num_rows($query_run) > 0) {
@@ -220,7 +220,7 @@ include('includes/header.php');
 
 
                       <?php
-                      $query = "SELECT * FROM feedback, users WHERE feedback.user_ID = users.user_ID LIMIT 4 OFFSET 8";
+                      $query = "SELECT * FROM feedback, users WHERE feedback.user_ID = users.user_ID AND IFNULL(feedback.status,1)=1 LIMIT 4 OFFSET 8";
                       $query_run = mysqli_query($con, $query);
 
                       if (mysqli_num_rows($query_run) > 0) {

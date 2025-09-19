@@ -54,7 +54,7 @@ if(isset($_POST['addUser']))
         else
         {
             //Available = Record not found
-            $user_query = "INSERT INTO users (username,phonenumber,email,password) VALUES ('$name','$phone','$email','$password')";
+            $user_query = "INSERT INTO users (username,phonenumber,email,password,created_at) VALUES ('$name','$phone','$email','$password', NOW())";
             $user_query_run = mysqli_query($con, $user_query);
 
             if($user_query_run)
@@ -138,8 +138,23 @@ if(isset($_POST['addProductType']))
     $parameter3 = $_POST['parameter3'];
     $parameter4 = $_POST['parameter4'];
     $parameter5 = $_POST['parameter5'];
+    $parameter6 = $_POST['parameter6'];
+    $parameter7 = $_POST['parameter7'];
+    $parameter8 = $_POST['parameter8'];
+    $parameter9 = $_POST['parameter9'];
+    $parameter10 = $_POST['parameter10'];
+    $parameter11 = $_POST['parameter11'];
+    $parameter12 = $_POST['parameter12'];
+    $parameter13 = $_POST['parameter13'];
+    $parameter14 = $_POST['parameter14'];
+    $parameter15 = $_POST['parameter15'];
+    $parameter16 = $_POST['parameter16'];
+    $parameter17 = $_POST['parameter17'];
+    $parameter18 = $_POST['parameter18'];
+    $parameter19 = $_POST['parameter19'];
+    $parameter20 = $_POST['parameter20'];
     
-    $cate_query = "INSERT INTO producttype (producttype_name, parameter1, parameter2, parameter3, parameter4,parameter5) VALUES ('$producttype_name','$parameter1','$parameter2','$parameter3','$parameter4','$parameter5')";
+    $cate_query = "INSERT INTO producttype (producttype_name, parameter1, parameter2, parameter3, parameter4, parameter5, parameter6, parameter7, parameter8, parameter9, parameter10, parameter11, parameter12, parameter13, parameter14, parameter15, parameter16, parameter17, parameter18, parameter19, parameter20) VALUES ('$producttype_name','$parameter1','$parameter2','$parameter3','$parameter4','$parameter5','$parameter6','$parameter7','$parameter8','$parameter9','$parameter10','$parameter11','$parameter12','$parameter13','$parameter14','$parameter15','$parameter16','$parameter17','$parameter18','$parameter19','$parameter20')";
     $cate_query_run = mysqli_query($con, $cate_query);
 
     if($cate_query_run)
@@ -165,8 +180,23 @@ if(isset($_POST['editProductType']))
     $parameter3 = $_POST['parameter3'];
     $parameter4 = $_POST['parameter4'];
     $parameter5 = $_POST['parameter5'];
+    $parameter6 = $_POST['parameter6'];
+    $parameter7 = $_POST['parameter7'];
+    $parameter8 = $_POST['parameter8'];
+    $parameter9 = $_POST['parameter9'];
+    $parameter10 = $_POST['parameter10'];
+    $parameter11 = $_POST['parameter11'];
+    $parameter12 = $_POST['parameter12'];
+    $parameter13 = $_POST['parameter13'];
+    $parameter14 = $_POST['parameter14'];
+    $parameter15 = $_POST['parameter15'];
+    $parameter16 = $_POST['parameter16'];
+    $parameter17 = $_POST['parameter17'];
+    $parameter18 = $_POST['parameter18'];
+    $parameter19 = $_POST['parameter19'];
+    $parameter20 = $_POST['parameter20'];
 
-    $query = "UPDATE producttype SET producttype_name='$producttype_name', parameter1='$parameter1', parameter2='$parameter2', parameter3='$parameter3', parameter4='$parameter4', parameter5='$parameter5' WHERE producttype_id='$producttype_id' ";
+    $query = "UPDATE producttype SET producttype_name='$producttype_name', parameter1='$parameter1', parameter2='$parameter2', parameter3='$parameter3', parameter4='$parameter4', parameter5='$parameter5', parameter6='$parameter6', parameter7='$parameter7', parameter8='$parameter8', parameter9='$parameter9', parameter10='$parameter10', parameter11='$parameter11', parameter12='$parameter12', parameter13='$parameter13', parameter14='$parameter14', parameter15='$parameter15', parameter16='$parameter16', parameter17='$parameter17', parameter18='$parameter18', parameter19='$parameter19', parameter20='$parameter20' WHERE producttype_id='$producttype_id' ";
     $query_run = mysqli_query($con, $query);
 
     if($query_run)
@@ -319,7 +349,7 @@ if(isset($_POST['deletebrand']))
 if (isset($_POST['producttype_id'])) {
     $producttype_id = $_POST['producttype_id'];
 
-    $query = "SELECT parameter1, parameter2, parameter3, parameter4, parameter5 FROM producttype WHERE producttype_id = $producttype_id";
+    $query = "SELECT parameter1, parameter2, parameter3, parameter4, parameter5, parameter6, parameter7, parameter8, parameter9, parameter10, parameter11, parameter12, parameter13, parameter14, parameter15, parameter16, parameter17, parameter18, parameter19, parameter20 FROM producttype WHERE producttype_id = $producttype_id";
     $result = mysqli_query($con, $query);
 
     if (mysqli_num_rows($result) > 0) {
@@ -348,7 +378,7 @@ if (isset($_POST['addProduct'])) {
     
 
     // Handling product description based on parameters
-    $parameter_query = "SELECT parameter1, parameter2, parameter3, parameter4, parameter5 FROM producttype WHERE producttype_id = $producttype_id";
+    $parameter_query = "SELECT parameter1, parameter2, parameter3, parameter4, parameter5, parameter6, parameter7, parameter8, parameter9, parameter10, parameter11, parameter12, parameter13, parameter14, parameter15, parameter16, parameter17, parameter18, parameter19, parameter20 FROM producttype WHERE producttype_id = $producttype_id";
     $parameter_result = mysqli_query($con, $parameter_query);
     $parameter_map = [];
 
@@ -599,6 +629,27 @@ if(isset($_POST['toggle_background_status'])) {
     }
     
     header('Location: manage_background.php');
+    exit(0);
+}
+
+// Toggle feedback active/inactive status
+if (isset($_POST['toggle_feedback_status'])) {
+    $feedback_id = intval($_POST['feedback_id']);
+
+    $query = "UPDATE feedback SET status = IF(status=1,0,1) WHERE feedback_ID = ?";
+    $stmt = mysqli_prepare($con, $query);
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "i", $feedback_id);
+        if (mysqli_stmt_execute($stmt)) {
+            $_SESSION['status'] = "Feedback status updated successfully!";
+        } else {
+            $_SESSION['status'] = "Error updating feedback status!";
+        }
+        mysqli_stmt_close($stmt);
+    } else {
+        $_SESSION['status'] = "Error preparing feedback status update!";
+    }
+    header('Location: feedback.php');
     exit(0);
 }
 ?>

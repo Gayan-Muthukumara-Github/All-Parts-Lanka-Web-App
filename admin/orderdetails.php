@@ -17,8 +17,9 @@ include('includes/sidebar.php');
                 <div class="col-md-12">
                     <?php include('message.php'); ?>
                     <div class="card">
-                        <div class="card-body">
-                            <table class="table table-bordered">
+                    <div class="card-body">
+                            <input type="text" id="searchOrderDetails" class="form-control mb-3" placeholder="Search...">
+                            <table class="table table-bordered" id="orderDetailsTable">
                                 <thead>
                                     <tr>
                                         <th>Order ID</th>
@@ -65,3 +66,17 @@ include('includes/sidebar.php');
 </div>
 <?php include('includes/script.php'); ?>
 <?php include('includes/footer.php'); ?>
+<script>
+  $(document).ready(function() {
+    function attachTableFilter(inputSelector, tableSelector) {
+      $(inputSelector).on('keyup', function () {
+        const term = $(this).val().toLowerCase();
+        $(tableSelector + ' tbody tr').each(function () {
+          const rowText = $(this).text().toLowerCase();
+          $(this).toggle(rowText.indexOf(term) !== -1);
+        });
+      });
+    }
+    attachTableFilter('#searchOrderDetails', '#orderDetailsTable');
+  });
+</script>
